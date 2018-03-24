@@ -1,12 +1,24 @@
 # Add  code here!
-
 def prime?(num)
-  i = 0
-  factors = 0
-  while num > i
-     if num % i == 0 
-       factors += 1
-    end 
+  
+   if num <= 1
+      return false 
+    elsif num ==2 || num == 3
+     return true
+    end
     
-    factors > 2 ? true : false
-end
+    i = Math.sqrt(num).ceil
+    factors = 0
+   
+    while i > 0
+      if num % i == 0
+        factors+= 1
+        i-=1
+      else 
+        i-=1
+      end
+    end
+    
+   factors == 1 ? true : false
+    
+end 
